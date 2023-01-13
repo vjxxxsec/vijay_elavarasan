@@ -27,6 +27,7 @@ public class service1 {
 		processid = processInstance.getId();
 		System.out.println("process id is " +processInstance.getId());	
 	}
+	
 	public void addinguser(User user) {
 		Task user_task = taskservice.createTaskQuery().processInstanceId(processid).singleResult();
 		runtimeService.setVariable(user_task.getExecutionId() , "email", user.getE_mail());
